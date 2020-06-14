@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+
+    <meta charset="utf-8">
+
+
+    <title>CatPhotoApp</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+    <!--import font from google fonts-->
+</head>
+<main>
+
+    <body>
+        <!--
+        <h2 style="color: red";>CatPhotoApp</h2>
+        example of inline css
+-->
+        <style>
+            h2 {
+                color: blue;
+                font-family: Lobster, monospace;
+                /*the secondary font, monospaces is what the font will 'degrade' to if the lobster font was unavailable*/
+            }
+
+            .green-text {
+                color: green;
+            }
+
+            p {
+                font-size: 32px;
+                /*assign font size*/
+                font-family: monospace;
+                /*asign font family*/
+            }
+
+            .smaller-image {
+                width: 200px;
+            }
+
+            /*resizes the image to 200px wide through by targeting the smaller-image class*/
+
+            .thick-green-border {
+                border-color: green;
+                border-width: 10px;
+                border-style: groove;
+                /*                border-radius: 50px;*/
+                border-radius: 50%;
+                /*can use percentage instead of pixels*/
+            }
+
+            /*setting border attributes*/
+
+            .silver-background {
+                background-color: silver;
+                /*sets element background color*/
+            }
+
+            #pink-background {
+                background-color: pink;
+            }
+
+            /*ids are identified with # in front of name rather than . like with classes*/
+
+            [type='radio'] {
+                margin: 20px 0px 20px 10px;
+            }
+
+            /*[attr=value] attibute selector matches and styles elements with a specific attribute value. This code changes the margins of all elements with the attribute 'type' and a corresponding value of 'radio'*/
+        </style>
+        <!--Style block can target all elements of that specific type; in this case, all h2 elements are blue-->
+        <h2>CatPhotoApp</h2>
+
+        <p class="green-text">Click here to view more <a href="#">cat photos</a>.</p>
+        <!--use of a css class to style an element-->
+
+        <a href="#"><img class="smaller-image thick-green-borde" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+
+        <div class="silver-background">
+            <p>Things cats love:</p>
+            <ul>
+                <li>cat nip</li>
+                <li>laser pointers</li>
+                <li>lasagna</li>
+            </ul>
+            <p>Top 3 things cats hate:</p>
+            <ol>
+                <li>flea treatment</li>
+                <li>thunder</li>
+                <li>other cats</li>
+            </ol>
+        </div>
+
+        <form id="pink-background" action="/submit-cat-photo">
+            <!--use id instead of class; ids are used ONCE only-->
+            <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
+            <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
+            <label><input type="checkbox" name="personality" checked> Loving</label>
+            <label><input type="checkbox" name="personality"> Lazy</label>
+            <label><input type="checkbox" name="personality"> Energetic</label><br>
+            <input type="text" placeholder="cat photo URL" required>
+            <button type="submit">Submit</button>
+        </form>
+
+        <br>
+        <hr>
+        <h1>More HTML styling</h1>
+
+        <style>
+            :root {
+                --letter-sizing: 100px;
+                /*by creating variables in root, they will be available globally and can be access from any other selector in the style sheet*/
+            }
+
+            .injected-text {
+                margin-bottom: -25px;
+                text-align: center;
+            }
+
+            h1 {
+                color: blue;
+                /*add a fallback to improve browser compatibility in case the browser can't recognize variables*/
+                color: var(--change-font-color, purple);
+                /*purple serves as a fallback property value if the given value is invalid*/
+            }
+
+            .box {
+                border-style: solid;
+                border-color: black;
+                border-width: 5px;
+                text-align: center;
+            }
+
+            .yellow-box {
+                background-color: yellow;
+                padding: 10px;
+                margin-top: 5px;
+                margin-right: 100px;
+                margin-bottom: 1px;
+                margin-left: 49px;
+                /*margin can also be customized to each side of element*/
+            }
+
+            .red-box {
+                background-color: crimson;
+                color: #fff;
+                padding: 3.5em;
+                /*relative units such as em or rem are relative to another length value. em is based on the size of the element's font. if used to set font-size, it's relative to the parent's font-size*/
+            }
+
+            .blue-box {
+                background-color: blue;
+                color: #fff;
+                padding-top: 10px;
+                padding-left: 200px;
+                /*padding can be customized to each side of an element*/
+                margin: -15px;
+                /*setting a negative margin makes the element grow larger*/
+            }
+
+            .white-box {
+                padding: 50px 100px 5px 200px;
+                /*padding can also be specified per side in one line; top-right-bottom-left (clockwise from top*/
+                background-color: white;
+                margin: 100px 20px 20px 40px;
+                /*margin can also be specified in one line using clockwise notation*/
+                background-color: aqua;
+                /*aqua overrides white for background color because it is declared second in the style section*/
+            }
+
+            #orange-background {
+                background-color: #FFA500;
+            }
+
+            /*note that the id attribute overrides class attributes. also note, that if background color for the "box white-box" class had !important after the background-color: white declaration, !important would override even the id declaration*/
+
+            body {
+                background-color: rgb(255, 20, 147);
+
+                /*                font-family: cursive; when not commented out, font-family of cursive will be inherited by all elements in the body unless overwritten at a more specific level such as a specific element within the body*/
+            }
+
+            .variable-practice {
+                width: 500px;
+                height: 500px;
+                background-color: chocolate;
+                margin: 100px;
+                --change-font-color: blue;
+                /*variable creation */
+
+            }
+        </style>
+        <h5 class="injected-text">margin</h5>
+        <!--an element's margin controls the amount of space between an element's border and surrounding elements-->
+
+        <div class="box yellow-box">
+            <h5 class="box red-box">padding</h5>
+            <!--padding controls amount of space between element's content and its border-->
+            <h5 class="box blue-box" style="color: red">padding</h5>
+            <!--in-line styling overrides things declared in style element CSS; in this case, color is changed to red even though in style element it is set to blue-->
+            <h5 class="box white-box" id="orange-background">padding</h5>
+        </div>
+
+        <div class="variable-practice">
+            <h1>Hello</h1>
+            <p>hi hi hi</p>
+        </div>
+
+    </body>
+</main></html>
